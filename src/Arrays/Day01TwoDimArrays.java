@@ -84,7 +84,32 @@ public class Day01TwoDimArrays {
 		
 		// TODO: 5) Find pairs of numbers in the array whose sum is a prime number and display those pairs and their sum.
 		//			(assume that negative number is not a prime number)
-
+		int number1=0;
+		int number2=0;
+		for(int i=0;i<arrayHeight;i++) {
+			for(int j=0;j<arrayWidth;j++) {
+				number1=my2DArray[i][j];
+				if(number1<0)
+					continue;
+				
+				for(int ii=0;ii<arrayHeight;ii++) {
+					for(int jj=0;jj<arrayWidth;jj++) {
+						if((i==ii)&&(j==jj))
+							continue;
+						number2=my2DArray[ii][jj];
+						if(number2<0)
+							continue;
+						int sumTwoNumbers=number1+number2;
+						if(isPrime(sumTwoNumbers)) {
+							//System.out.printf("%s%d%s%d%s%d","The first number is: ",number1," The second number is: ",number2," The prime sum is: ",sumTwoNumbers);
+							System.out.printf("%s%-3d%s%3d%s%-2d","(",number1,",",number2,")= ",sumTwoNumbers);
+							System.out.println();
+						}
+					}
+				}
+				
+			}
+		}
 		
 
 		
