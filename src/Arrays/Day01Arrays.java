@@ -12,9 +12,8 @@ public class Day01Arrays {
 		System.out.println("Please enter the size of the array");
 		
 		try {
-			arraySize=scanner.nextInt();
-		} catch (Exception e) {			
-			//e.printStackTrace();
+			arraySize=scanner.nextInt();			
+		} catch (Exception e) {						
 			System.out.println("Array Size should be an integer");
 			System.out.println("Ending the program");
 			System.exit(0);
@@ -28,20 +27,28 @@ public class Day01Arrays {
 		
 		int[] myArray = new int[arraySize];		
 		for(int i=0;i<arraySize;i++) {
+			// One Way
 			myArray[i]=ThreadLocalRandom.current().nextInt(1, 100);
+			// Second way
+			//myArray[i]=(int)(Math.random()*100+1);
 		}
 		System.out.println("All numbers of the array\n");
 		for(int i=0;i<arraySize;i++) {
-			if(i!=0) 
-				System.out.print(";");
-			System.out.print(myArray[i]);
+			// One Way
+//			if(i!=0) 
+//				System.out.print(",");
+//			System.out.print(myArray[i]);
+			// Second Way
+			System.out.printf("%s%d",i==0 ? "":",",myArray[i]);
 		}
+		boolean isFirst=true;
 		System.out.println("\n\nShowing only prime numbers\n");		
 		for(int i=0;i<arraySize;i++) {			
 			if(isPrime(myArray[i])) {
-				if(i!=0) 
-					System.out.print(";");				
-				System.out.print(myArray[i]);										
+				if(myArray[i]!=1) {					
+				System.out.printf("%s%d",isFirst ? "":",",myArray[i]);
+				isFirst=false;
+				}
 			}									 			
 		}
 		scanner.close();
