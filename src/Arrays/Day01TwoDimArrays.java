@@ -92,16 +92,15 @@ public class Day01TwoDimArrays {
 				if(number1<0)
 					continue;
 				
-				for(int ii=0;ii<arrayHeight;ii++) {
-					for(int jj=0;jj<arrayWidth;jj++) {
+				for(int ii=i;ii<arrayHeight;ii++) {
+					for(int jj=j;jj<arrayWidth;jj++) {
 						if((i==ii)&&(j==jj))
 							continue;
 						number2=my2DArray[ii][jj];
 						if(number2<0)
 							continue;
 						int sumTwoNumbers=number1+number2;
-						if(isPrime(sumTwoNumbers)) {
-							//System.out.printf("%s%d%s%d%s%d","The first number is: ",number1," The second number is: ",number2," The prime sum is: ",sumTwoNumbers);
+						if(isPrime(sumTwoNumbers)) {							
 							System.out.printf("%s%-3d%s%3d%s%-2d","(",number1,",",number2,")= ",sumTwoNumbers);
 							System.out.println();
 						}
@@ -109,10 +108,7 @@ public class Day01TwoDimArrays {
 				}
 				
 			}
-		}
-		
-
-		
+		}		
 	}
 	public static boolean isPrime(int number) {
 		int sqrt = (int) Math.sqrt(number) + 1;
@@ -124,5 +120,4 @@ public class Day01TwoDimArrays {
 		} 
 				return true;
 	}
-
 }
