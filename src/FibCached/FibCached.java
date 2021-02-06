@@ -18,15 +18,15 @@ public class FibCached {
 		  System.out.println("Time taken to compute in milliseconds->"+(postTime-preTime));
 
 	}
-	public static long fibonacciold(long n) {
-		  if(n==0 ){
-		    return 0;
-		  }else if(n==1){
-		    return 1;
-		  } else {
-		    return fibonacciold(n - 1) + fibonacciold(n - 2);
-		  }
-		 }
+//	public static long fibonacciold(long n) {
+//		  if(n==0 ){
+//		    return 0;
+//		  }else if(n==1){
+//		    return 1;
+//		  } else {
+//		    return fibonacciold(n - 1) + fibonacciold(n - 2);
+//		  }
+//		 }
 	
 	
 	 public static long fibArray[]=new long[100];

@@ -39,7 +39,8 @@ public class Day02 {
 	
 	// duplicate a jagged array
 	static int[][] duplicateEmptyArray2D(int[][] orig2d) {
-		int[][] duplicate2d=new int[orig2d.length][orig2d[0].length];
+		int[][] duplicate2d=new int[orig2d.length][];
+		
 		for(int i=0;i<orig2d.length;i++)		
 			for(int j=0;j<orig2d[i].length;j++)
 				duplicate2d[i][j]=orig2d[i][j];
@@ -64,21 +65,16 @@ public class Day02 {
 	   int countNumbers=data.length*data[0].length;
 	   int[] sums=new int[countNumbers]; 
 	   
+	   
+	   
 	  int c=0; 	   
 		   for(int i=0;i<data.length;i++)			   
 				for(int j=0;j<data[i].length;j++)
 				{
 					sums[c]=sumOfCross(data, i, j);
 					c++;
-				}
-	   
-//	   for(int i=0;i<sums.length;i++)
-//		   System.out.print(sums[i]+" ");
-	   
+				}	   	 
 	   Arrays.sort(sums);
-//	   System.out.println();
-//	   for(int i=0;i<sums.length;i++)
-//		   System.out.print(sums[i]+" ");
 	   return sums[0];	   				
    }
    
